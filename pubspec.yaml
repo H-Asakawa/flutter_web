@@ -21,6 +21,8 @@ dependencies:
   #    sdk: flutter
   flutter_web: any
   intl: ^0.15.7
+  firebase: ^5.0.0
+
 
 dev_dependencies:
   #  flutter_test:

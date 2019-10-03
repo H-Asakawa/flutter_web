@@ -1,6 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
-import 'package:intl/intl.dart';
+import 'package:asakawa_presentation/presentation_slides/slide_date.dart';
 
 class DefaultSlide extends StatelessWidget {
   const DefaultSlide({this.title, this.content});
@@ -10,33 +10,13 @@ class DefaultSlide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var format = DateFormat.yMMMd('ja');
-    var date = format.format(DateTime.now());
-
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         color: Colors.white70,
         child: Stack(
           children: <Widget>[
-            Positioned(
-              right: 30,
-              top: 20,
-              child: Row(
-                children: <Widget>[
-                  Text(
-                    date,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  FlutterLogo(
-                    size: 40,
-                  ),
-                ],
-              ),
-            ),
+            SlideDate(),
             Positioned(
               left: 100,
               top: 80,
