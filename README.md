@@ -168,3 +168,40 @@ $ firebase deploy
 # 下の方のURLにアクセスできたらhosting成功！！
 （上の方は違うURLなので注意、最初間違えてhostingできてないのかと勘違いしていた）
 ```
+## おしまい
+
+### 謎のハマりポイント
+firebase deployまではできたけど、「リクエストの処理中に不明のエラーが発生しました。もう一度お試しください」の画面しか表示されない。（上記のようにURL間違えてただけの可能性は有る）
+
+buildしてないじゃんってことに気づいたので下記実行してみるとエラーが出た
+$ webdev build
+
+```
+ !  ~/A/asakawa_presentation   litalico_presentation *~…  webdev build                 2m  木 10/ 3 22:58:26 2019
+[WARNING] Throwing away cached asset graph due to Dart SDK update.
+[INFO] Cleaning up outputs from previous builds. completed, took 72ms
+[INFO] Building new asset graph completed, took 2.0s
+[INFO] Checking for unexpected pre-existing outputs. completed, took 3ms
+[INFO]build_web_compilers:entrypoint on web/main.dart: Running dart2js with --minify --packages=.package-ad6faed33dc93ff8754afaa8b7e9af21 -oweb/main.dart.js web/main.dart
+[WARNING] No actions completed for 15.0s, waiting on:
+  - build_web_compilers:entrypoint on web/main.dart
+
+[INFO]build_web_compilers:entrypoint on web/main.dart: Dart2Js finished with:
+
+Compiled 20,601,600 characters Dart to 1,426,833 characters JavaScript in 24.9 seconds
+Dart file web/main.dart compiled to JavaScript: web/main.dart.js
+[INFO] Running build completed, took 30.4s
+[INFO] Caching finalized dependency graph completed, took 200ms
+[SEVERE] Unable to create merged directory at build.
+Choose a different directory or delete the contents of that directory.
+[SEVERE] FailureType: 73
+[SEVERE] Unable to create merged directory for build.
+[SEVERE] Failed after 30.6s
+```
+
+ここに注目
+[SEVERE] Unable to create merged directory at build.
+Choose a different directory or delete the contents of that directory.
+
+buildした成果物を格納してるディレクトリがなんかおかしそうだったので一度build/を削除してから
+もう一度$ webdev buildを実行するとうまくいった！（どうやらbuild/になにか自分で勝手にファイル生成してしまっていたみたい）
