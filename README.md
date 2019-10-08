@@ -72,7 +72,7 @@ $ webdev serve
 ####  謎のハマりポイント
 - white screen現象（サーバーは起動しているけれど真っ白な画面しか表示されなくなる）
 - 同じようなエラー報告は多い：[[web] White screen and error in console when running Flutter for Web app · Issue #40876 · flutter/flutter · GitHub](https://github.com/flutter/flutter/issues/40876)
-- これといった解決法が見当たらなかったけど、.dart_toolsというディレクトリを一度削除したあと再度$webdev serveを実行すると治った。
+- これといった解決法が見当たらなかったけど、.dart_toolというディレクトリを一度削除したあと再度$webdev serveを実行すると治った。
 （buildの際のコンパイルが上手くいってないのでそれ関連のファイルを一旦リセットしたため治った？）
 ```
 .dart_toolがあることを確認
@@ -87,6 +87,7 @@ $ rm -r .dart_tool
 - AndroidstudioからNew flutter projectしようとしてもflutter webが見当たらないので、仕方なくios/android用としてまずは空のappを作成
 - flutter webへの移行ガイドを見ながら必要なファイルやディレクトリを追加していく
 [flutter_web/migration_guide.md at master · flutter/flutter_web · GitHub](https://github.com/flutter/flutter_web/blob/master/docs/migration_guide.md)
+
 （flutter web用のcreateコマンドを叩くやり方のほうがスマートかもしれない..）
 
 ```
@@ -112,7 +113,7 @@ web用にmustで必要なディレクトリなので新規作成
 
 # web/assets/AssetManifest.json
 画像もjsonでここに書いておけば使える。
-アプリではpubspec.ymlにasset_pathを記述してたけど、webのほうが楽チンな印象
+アプリではpubspec.yamlにasset_pathを記述してたけど、webのほうが楽チンな印象
 ```
 - ここで新規作成したwebappがローカルで実行できればおk
 - 既存のhello_worldをコピペして新規作成して改変すると楽チンかも
@@ -136,6 +137,8 @@ $ firebase login
 ```
 # 作成しているfirebaseプロジェクトの一覧が表示されるのでお試しに
 $ firebase list
+
+# ここでプロジェクトが何もない場合は、firebaseの管理画面からプロジェクトを作成しておく必要がある。これはfirebase公式のガイドに従ったほうがいい。
 ```
 
 ```
@@ -173,7 +176,7 @@ $ firebase deploy
 ### 謎のハマりポイント
 firebase deployまではできたけど、「リクエストの処理中に不明のエラーが発生しました。もう一度お試しください」の画面しか表示されない。（上記のようにURL間違えてただけの可能性は有る）
 
-buildしてないじゃんってことに気づいたので下記実行してみるとエラーが出た
+作成したwebappをbuildしてないじゃんってことに気づいたので下記実行してみるとエラーが出た
 $ webdev build
 
 ```
