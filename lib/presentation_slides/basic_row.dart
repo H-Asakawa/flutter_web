@@ -1,17 +1,32 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 
-class ColumnTwo extends StatelessWidget {
+class BasicRow extends StatelessWidget {
+  const BasicRow(
+      {this.title_background_color,
+      this.title,
+      this.content_background_color,
+      this.content1,
+      this.content2,
+      this.content3});
+
+  final int title_background_color;
+  final String title;
+  final int content_background_color;
+  final String content1;
+  final String content2;
+  final String content3;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: <Widget>[
           Container(
-            color: Color(0xfff7c143),
-            width: MediaQuery.of(context).size.width * 0.35,
+            color: Color(title_background_color),
+            width: MediaQuery.of(context).size.width * 0.4,
             child: Center(
-              child: Text("構成要素",
+              child: Text(title,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 40,
@@ -19,23 +34,26 @@ class ColumnTwo extends StatelessWidget {
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.65,
+            color: Color(content_background_color),
+            width: MediaQuery.of(context).size.width * 0.6,
             child: Column(
               children: <Widget>[
-                SizedBox(height: MediaQuery.of(context).size.height * 0.40),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.4),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "・猜疑",
+                      "・" + content1,
                       style: TextStyle(fontSize: 30),
                     ),
+                    SizedBox(height: 32.0),
                     Text(
-                      "・警戒",
+                      "・" + content2,
                       style: TextStyle(fontSize: 30),
                     ),
+                    SizedBox(height: 32.0),
                     Text(
-                      "・乱高下",
+                      "・" + content3,
                       style: TextStyle(fontSize: 30),
                     ),
                   ],

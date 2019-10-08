@@ -1,20 +1,20 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
-import 'package:intl/intl.dart';
 
-class SlideDate extends StatelessWidget {
+class FlutterCaption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var format = DateFormat.yMMMd('ja');
-    var date = format.format(DateTime.now());
-
     return Positioned(
-      left: 30,
+      right: 30,
       top: 20,
       child: Row(
         children: <Widget>[
+          FlutterLogo(
+            size: 40,
+          ),
+          SizedBox(width: 8.0),
           Text(
-            date,
+            'Flutter Web',
             style: TextStyle(
                 color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           ),
