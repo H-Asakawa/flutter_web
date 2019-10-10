@@ -32,7 +32,7 @@ class TitleSlide extends StatelessWidget {
             ),
             Positioned(
               left: 100,
-              top: 340,
+              top: 300,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.width * 0.5,

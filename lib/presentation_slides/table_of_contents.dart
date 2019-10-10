@@ -1,8 +1,8 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 
-class BasicRow extends StatelessWidget {
-  const BasicRow(
+class TableOfContents extends StatelessWidget {
+  const TableOfContents(
       {this.title_background_color,
       this.title,
       this.content_background_color,
