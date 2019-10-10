@@ -24,7 +24,7 @@ class DefaultSlide extends StatelessWidget {
                 title,
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 70,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold),
               ),
             ),

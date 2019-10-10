@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         children: <Widget>[
           SingleImageSingleText(
               title: "本日ご紹介するのは「この世の果てで恋を歌う少女YU-NO」",
-              content: "９０年台の超絶名作！全てのノベルゲーム開発者が立ち返るべきバイブル",
-              image: "yu-no.png"),
+              content: "９０年代の超名作！全てのノベルゲーム開発者が立ち返るべきバイブル",
+              image: "yu-no-girl.jpg"),
           TitleSlide(
               title: "この世の果てで恋を歌う少女YU-NO",
               content:
