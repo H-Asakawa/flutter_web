@@ -17,24 +17,17 @@ https://asakawa-slides.web.app/
 - flutterSDKのインストールはここから：[Install - Flutter](https://flutter.dev/docs/get-started/install)
 - 環境構築はこの記事を参考にするといい：[Flutter開発環境構築(Mac編) - Qiita](https://qiita.com/akatsukaha/items/3b8a5a6d94a3cdb1e047)
 - PATHについては下記を参考に
-- bashの場合（fish使ってるので足りてない可能性有り）
-```
-# flutterの実行コマンドが使えるようになるはず
-export PATH="$PATH:/Users/hiroshi.asakawa/Documents/flutter/bin"
-
-# 内部でdartを使ってるのでDARTもPATHを通す
-export PATH="$PATH":"$HOME/Documents/flutter/.pub-cache/bin"
 ```
 - fishの場合
 ```
 # flutter
-set -x PATH /Users/hiroshi.asakawa/Documents/flutter/bin $PATH
+set -x PATH /Users/hiroshiasakawa/Documents/flutter/bin $PATH
 
 # pub-cache
-set -x PATH $HOME/Documents/flutter/.pub-cache/bin $PATH
+set -x PATH /Users/hiroshiasakawa/Documents/flutter/.pub-cache/bin $PATH
 
 # Dart
-set -x PATH /Users/hiroshi.asakawa/Documents/flutter/bin/cache/dart-sdk $PATH
+set -x PATH /Users/hiroshiasakawa/Documents/flutter/bin/cache/dart-sdk/bin $PATH
 ```
 - flutterコマンドが実行できるようになったら
 - Flutter for Webのsampleをgithubから取得する
@@ -81,6 +74,11 @@ $ ls -a
 ディレクトリごと削除
 $ rm -r .dart_tool
 ```
+
+#### ハマりポイント2
+- $ webdev serveコマンドの実行には、Dartのpathを通す必要がある
+- flutterSDKをDLした時点で、/flutter/bin/cache/dart-sdk/binにdartSDKも存在するのでそこにpath通せばおk
+- （pathの指定を単純に間違えてた時、dartSDKはわざわざ別でDLしないといけないのか？と悪戦苦闘してしまった）
 
 #### sampleが動かせるようになったら次はwebappを新規作成してみる
 - IDEからCreate New Projectを選択後、flutter webを選択（このやり方はIntelijayしか使えないみたい）
