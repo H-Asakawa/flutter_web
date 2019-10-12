@@ -265,5 +265,9 @@ Choose a different directory or delete the contents of that directory.
 # 成功
 
 # ちゃんとbuildに成功した場合は、/web以下にあるindex.htmlと/build以下にあるindex.htmlの中身が同一になってる
-# firebase initするときはこのindex.htmlを上書きしちゃわないように気をつけたらよさそう
+# firebase initするときはこのindex.htmlを上書きしちゃわないように気をつけること
+```
+# build以下のindex.htmlを上書きするか聞かれるけど、事前にbuildしてたものを上書きしたくないのでNo選択
+? File build/index.html already exists. Overwrite? No
+```
 ```
