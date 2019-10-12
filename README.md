@@ -16,6 +16,7 @@ https://asakawa-slides.web.app/
 - まずflutter doctorコマンドが実行できるようにする（android,xcodeなどはひとまず不要なので、PATHを通す）
 - flutterSDKのインストールはここから：[Install - Flutter](https://flutter.dev/docs/get-started/install)
 - 環境構築はこの記事を参考にするといい：[Flutter開発環境構築(Mac編) - Qiita](https://qiita.com/akatsukaha/items/3b8a5a6d94a3cdb1e047)
+- web特化の環境構築ならばこちらの記事のほうがみやすい：ソースコードひとつでWeb+Android+iOSに対応！話題のFlutter for Webに爆速入門する方法【5分でHello,World!】https://qiita.com/Ikko_Kojima/items/16b6ca3008b835c452a3
 - PATHについては下記を参考に
 ```
 - fishの場合
@@ -81,7 +82,7 @@ $ rm -r .dart_tool
 - （pathの指定を単純に間違えてた時、dartSDKはわざわざ別でDLしないといけないのか？と悪戦苦闘してしまった）
 
 #### sampleが動かせるようになったら次はwebappを新規作成してみる
-- IDEからCreate New Projectを選択後、flutter webを選択（このやり方はIntelijayしか使えないみたい）
+- IDEからCreate New Projectを選択後、flutter webを選択（このやり方はInteliJしか使えないみたい）
 - AndroidstudioからNew flutter projectしようとしてもflutter webが見当たらないので、仕方なくios/android用としてまずは空のappを作成
 - flutter webへの移行ガイドを見ながら必要なファイルやディレクトリを追加していく
 [flutter_web/migration_guide.md at master · flutter/flutter_web · GitHub](https://github.com/flutter/flutter_web/blob/master/docs/migration_guide.md)
