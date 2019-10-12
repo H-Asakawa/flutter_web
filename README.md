@@ -138,6 +138,12 @@ $ firebase list
 ```
 
 ```
+# デプロイしたいwebappを事前にビルドしておく
+$ webdev build
+これを実行するとbuildディレクトリ以下に成果物がコンパイルされて出来上がるのでのちにこれをfirebaseへデプロイする
+```
+
+```
 # プロジェクトの初期化、firebase.jsonと.firebasercが作成される
 # このコマンドを実行すると、対話式で色々聞かれるので入力していく
 $ firebase init
@@ -149,7 +155,7 @@ firm your choices.
 # Hostingを選択
 Hosting: Configure and deploy Firebase Hosting sites
 
-# どのディレクトリを使うか聞かれるのでbuildを選択（$webdev buildするとコンパイルされたものがbuildディレクトリに生成されるのでそれを使う）
+# どのディレクトリを使うか聞かれるのでbuildを選択
 ? What do you want to use as your public directory? build
 
 # シングルページアプリケーションなのかを聞かれるのでyesを選択（なんか最新って感じ）
@@ -164,7 +170,7 @@ Hosting: Configure and deploy Firebase Hosting sites
 $ firebase deploy
 
 
-# 下の方のURLにアクセスできたらhosting成功！！
+# 下の方に出てくるhostingURLにアクセスできたらデプロイ成功！！
 （上の方は違うURLなので注意、最初間違えてhostingできてないのかと勘違いしていた）
 ```
 ## おしまい
@@ -204,3 +210,60 @@ Choose a different directory or delete the contents of that directory.
 
 buildした成果物を格納してるディレクトリがなんかおかしそうだったので一度build/を削除してから
 もう一度$ webdev buildを実行するとうまくいった！（どうやらbuild/になにか自分で勝手にファイル生成してしまっていたみたい）
+
+# ハマりポイント2
+# firebase deployはうまくいったようだけど、変な画面が表示される
+```
+Welcome
+Firebase Hosting Setup Complete
+You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!
+
+OPEN HOSTING DOCUMENTATION
+```
+# 調べてみると、index.htmlがちゃんとwebappでbuildしたものでないためこの画面になってる模様（つまりデフォルト状態のhtmlをデプロイしちゃってる状態）
+# これが参考になった：https://github.com/coreui/coreui-react/issues/55
+# まずはちゃんとbuildしよう
+
+$ webdev buildが失敗
+```
+ ~/A/flutter_web_slides   fix-README *  webdev build           土 10/12 20:33:50 2019
+[INFO] Reading cached asset graph completed, took 322ms
+[INFO] Checking for updates since last build completed, took 1.2s
+[INFO]build_web_compilers:entrypoint on web/main.dart: Running dart2js with --minify --packages=.package-ad6faed33dc93ff8754afaa8b7e9af21 -oweb/main.dart.js web/main.dart
+[WARNING] No actions completed for 15.1s, waiting on:
+  - build_web_compilers:entrypoint on web/main.dart
+
+[INFO]build_web_compilers:entrypoint on web/main.dart: Dart2Js finished with:
+
+Compiled 20,601,605 characters Dart to 1,426,838 characters JavaScript in 19.5 seconds
+Dart file web/main.dart compiled to JavaScript: web/main.dart.js
+[INFO] Running build completed, took 21.3s
+[INFO] Caching finalized dependency graph completed, took 200ms
+[SEVERE] Unable to create merged directory at build.
+Choose a different directory or delete the contents of that directory.
+[SEVERE] Unable to create merged directory for build.
+[SEVERE] Failed after 21.5s
+[SEVERE] FailureType: 73
+```
+
+ここが怪しい：[SEVERE] Unable to create merged directory at build.
+Choose a different directory or delete the contents of that directory.
+
+/buildを確認してみると、index.htmlのファイルのみ存在したのでこれを削除
+
+再度buildを実行（ビルドするとindex.htmlもまた生成される）
+```
+ !  ~/A/flutter_web_slides   fix-README *  webdev build
+[INFO] Reading cached asset graph completed, took 277ms
+[INFO] Checking for updates since last build completed, took 1.1s
+[INFO] Running build completed, took 250ms
+[INFO] Caching finalized dependency graph completed, took 195ms
+[INFO] Creating merged output dir `build` completed, took 374ms
+[INFO] Writing asset manifest completed, took 6ms
+[INFO] Succeeded after 869ms with 0 outputs (0 actions)
+
+# 成功
+
+# ちゃんとbuildに成功した場合は、/web以下にあるindex.htmlと/build以下にあるindex.htmlの中身が同一になってる
+# firebase initするときはこのindex.htmlを上書きしちゃわないように気をつけたらよさそう
+```
