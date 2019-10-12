@@ -23,11 +23,11 @@ https://asakawa-slides.web.app/
 # flutter
 set -x PATH /Users/hiroshiasakawa/Documents/flutter/bin $PATH
 
-# pub-cache
-set -x PATH /Users/hiroshiasakawa/Documents/flutter/.pub-cache/bin $PATH
-
 # Dart
 set -x PATH /Users/hiroshiasakawa/Documents/flutter/bin/cache/dart-sdk/bin $PATH
+
+# webdev
+set -x PATH /Users/hiroshiasakawa/Documents/flutter/.pub-cache/bin $PATH
 ```
 - flutterコマンドが実行できるようになったら
 - Flutter for Webのsampleをgithubから取得する
