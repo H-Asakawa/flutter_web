@@ -18,7 +18,6 @@ https://asakawa-slides.web.app/
 - 環境構築はこの記事を参考にするといい：[Flutter開発環境構築(Mac編) - Qiita](https://qiita.com/akatsukaha/items/3b8a5a6d94a3cdb1e047)
 - web特化の環境構築ならばこちらの記事のほうがみやすい：ソースコードひとつでWeb+Android+iOSに対応！話題のFlutter for Webに爆速入門する方法【5分でHello,World!】https://qiita.com/Ikko_Kojima/items/16b6ca3008b835c452a3
 - PATHについては下記を参考に
-```
 - fishの場合
 ```
 # flutter
