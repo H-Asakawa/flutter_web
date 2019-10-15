@@ -18,7 +18,7 @@ class DefaultSlide extends StatelessWidget {
           children: <Widget>[
             FlutterCaption(),
             Positioned(
-              left: 100,
+              left: 50,
               top: 80,
               child: Text(
                 title,
@@ -29,7 +29,7 @@ class DefaultSlide extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 100,
+              left: 50,
               top: 350,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.8,

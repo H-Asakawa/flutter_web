@@ -20,7 +20,7 @@ class TitleSlide extends StatelessWidget {
             SlideDate(),
             FlutterCaption(),
             Positioned(
-              left: 100,
+              left: 50,
               top: 120,
               child: Text(
                 title,
@@ -31,7 +31,7 @@ class TitleSlide extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 100,
+              left: 50,
               top: 300,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.8,

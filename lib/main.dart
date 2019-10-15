@@ -20,33 +20,40 @@ class MyApp extends StatelessWidget {
       ),
       home: PageView(
         children: <Widget>[
-          DoubleImageDoubleText(
-              title: "画像比較によると",
-              image1: "yu-no-girl.jpg",
-              image2: "yu-no-girl.jpg",
-              text1: "こっちが本物だよ",
-              text2: "こっちはにせものだよ、だまされないで、こっちはにせものなのよ！！！！！"),
+          TitleSlide(
+              title: "『LITALICOパワポ生成ツール in flutter web』",
+              content:
+                  "flutter web × firebase hostingを使った高速webページ制作。パワーポイントのデータをgithubで管理。決まったレイアウト構造のみを使うことで情報共有を便利に。パワポ作成が苦手なひとでもこれなら簡単。"),
           SingleImageSingleText(
-              title: "本日ご紹介するのは「この世の果てで恋を歌う少女YU-NO」",
-              content: "９０年代の超名作！全てのノベルゲーム開発者が立ち返るべきバイブル",
+              title: "本日ご紹介するのは「LITALICOパワポ生成ツール」",
+              content: "flutter webを使って、会社のプレゼン用パワーポイントを簡単に作れちゃう",
               image: "yu-no-girl.jpg"),
           SingleMessageSlide(title: "え？なにそれ美味しいの？"),
-          TitleSlide(
-              title: "この世の果てで恋を歌う少女YU-NO",
-              content:
-                  "『この世の果てで恋を唄う少女YU-NO』（このよのはてでこいをうたうしょうじょ ユーノ、英題：YU-NO：A girl who chants love at the bound of this world.）は、菅野ひろゆき[注 1]が企画・脚本・ゲームデザイン・総合プロデュースを担当し、エルフにて開発販売したSFアドベンチャーゲーム[1]。PC-98、セガサターン、Windowsで発売されたほか、リメイク版も発売されている。また、アダルトアニメ化、漫画化、小説化、全年齢向けテレビアニメ化もされた。"),
           SingleMessageSlide(title: "目次"),
           TableOfContents(
-            title: "並列世界構成原理",
+            title: "LITALICOパワポ生成ツールの魅力",
             title_background_color: 0xfff3776A9,
             content_background_color: 0xfffA3CFDD,
-            content1: "ブリンダーの木",
-            content2: "事象のシュヴァルツシェルト半径",
-            content3: "次元監査官",
+            content1: "パワポ作成が苦手なひとでも文章とテキストを入れるだけで美しいレイアウトのスライドが作れる",
+            content2: "コードを書くようにパワポを書ける",
+            content3: "firebase hostingですぐにwebに公開できる",
           ),
+          DoubleImageDoubleText(
+              title: "パワポとflutter webの出来栄え比較",
+              image1: "yu-no-girl.jpg",
+              image2: "yu-no-girl.jpg",
+              text1: "作成：powew point",
+              text2: "作成：flutter web"),
           ImageSlide(image: "smash_brothers.png"),
-          DefaultSlide(title: "3枚目のスライド", content: "え、もしやスライド作るのちょっと楽なのでは"),
-          DefaultSlide(title: "4枚目のスライド", content: "基本レイアウトさえ用意しておけば..."),
+          DefaultSlide(
+              title: "意外と簡単に作れちゃう", content: "パワポはいじりたくないけどflutter webなら..！"),
+          DefaultSlide(
+              title: "一度作ったスライドって保存しておけないの？",
+              content: "スライド保存機能、comming soon.."),
+          DefaultSlide(
+              title: "フォーム入力したら生成してくれたらいいのに..",
+              content: "スライド作成機能、comming soon.."),
+          SingleMessageSlide(title: "開発協力者、随時募集中！"),
           SingleMessageSlide(title: "おしまい"),
         ],
       ),

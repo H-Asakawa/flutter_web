@@ -24,7 +24,10 @@ class DoubleImageDoubleText extends StatelessWidget {
               child: Center(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 40),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),

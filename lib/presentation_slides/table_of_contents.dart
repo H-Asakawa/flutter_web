@@ -23,6 +23,7 @@ class TableOfContents extends StatelessWidget {
       body: Row(
         children: <Widget>[
           Container(
+            padding: EdgeInsets.all(16),
             color: Color(title_background_color),
             width: MediaQuery.of(context).size.width * 0.4,
             child: Center(
@@ -34,34 +35,30 @@ class TableOfContents extends StatelessWidget {
             ),
           ),
           Container(
+            padding: EdgeInsets.all(16),
             color: Color(content_background_color),
             width: MediaQuery.of(context).size.width * 0.6,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: MediaQuery.of(context).size.height * 0.4),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      "・" + content1,
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    SizedBox(height: 32.0),
-                    Text(
-                      "・" + content2,
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    SizedBox(height: 32.0),
-                    Text(
-                      "・" + content3,
-                      style: TextStyle(fontSize: 30),
-                    ),
-                  ],
-                )
+                Text(
+                  "・" + content1,
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(height: 32.0),
+                Text(
+                  "・" + content2,
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(height: 32.0),
+                Text(
+                  "・" + content3,
+                  style: TextStyle(fontSize: 30),
+                ),
               ],
             ),
           ),
-          // ),
         ],
       ),
     );
