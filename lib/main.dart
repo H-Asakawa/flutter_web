@@ -5,6 +5,7 @@ import 'package:asakawa_presentation/presentation_slides/image_slide.dart';
 import 'package:asakawa_presentation/presentation_slides/table_of_contents.dart';
 import 'package:asakawa_presentation/presentation_slides/single_image_single_text.dart';
 import 'package:asakawa_presentation/presentation_slides/single_message_slide.dart';
+import 'package:asakawa_presentation/presentation_slides/double_image_double_text.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,12 @@ class MyApp extends StatelessWidget {
       ),
       home: PageView(
         children: <Widget>[
+          DoubleImageDoubleText(
+              title: "画像比較によると",
+              image1: "yu-no-girl.jpg",
+              image2: "yu-no-girl.jpg",
+              text1: "こっちが本物だよ",
+              text2: "こっちはにせものだよ、だまされないで、こっちはにせものなのよ！！！！！"),
           SingleImageSingleText(
               title: "本日ご紹介するのは「この世の果てで恋を歌う少女YU-NO」",
               content: "９０年代の超名作！全てのノベルゲーム開発者が立ち返るべきバイブル",

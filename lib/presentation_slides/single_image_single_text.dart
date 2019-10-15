@@ -22,13 +22,14 @@ class SingleImageSingleText extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Center(
-                  child: Text(
-                title,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold),
-              )),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
           ),
           Container(
@@ -50,15 +51,17 @@ class SingleImageSingleText extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Center(
-                          child: Image.asset(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Center(
+                      child: Image.asset(
                         image,
                         fit: BoxFit.contain,
-                      )),
-                    )),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           )
