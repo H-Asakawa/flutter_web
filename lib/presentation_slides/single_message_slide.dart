@@ -1,9 +1,8 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
-import 'package:asakawa_presentation/presentation_slides/flutter_caption.dart';
 
-class FinishSlide extends StatelessWidget {
-  const FinishSlide({this.title});
+class SingleMessageSlide extends StatelessWidget {
+  const SingleMessageSlide({this.title});
 
   final String title;
 
