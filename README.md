@@ -175,9 +175,9 @@ $ firebase deploy
 # 下の方に出てくるhostingURLにアクセスできたらデプロイ成功！！
 （上の方は違うURLなので注意、最初間違えてhostingできてないのかと勘違いしていた）
 ```
-## おしまい
+### おしまい
 
-### 謎のハマりポイント
+#### 謎のハマりポイント
 firebase deployまではできたけど、「リクエストの処理中に不明のエラーが発生しました。もう一度お試しください」の画面しか表示されない。（上記のようにURL間違えてただけの可能性は有る）
 
 作成したwebappをbuildしてないじゃんってことに気づいたので下記実行してみるとエラーが出た
@@ -213,8 +213,8 @@ Choose a different directory or delete the contents of that directory.
 buildした成果物を格納してるディレクトリがなんかおかしそうだったので一度build/を削除してから
 もう一度$ webdev buildを実行するとうまくいった！（どうやらbuild/になにか自分で勝手にファイル生成してしまっていたみたい）
 
-# ハマりポイント2
-# firebase deployはうまくいったようだけど、変な画面が表示される
+#### ハマりポイント2
+#### firebase deployはうまくいったようだけど、変な画面が表示される
 ```
 Welcome
 Firebase Hosting Setup Complete
@@ -222,9 +222,9 @@ You're seeing this because you've successfully setup Firebase Hosting. Now it's 
 
 OPEN HOSTING DOCUMENTATION
 ```
-# 調べてみると、index.htmlがちゃんとwebappでbuildしたものでないためこの画面になってる模様（つまりデフォルト状態のhtmlをデプロイしちゃってる状態）
-# これが参考になった：https://github.com/coreui/coreui-react/issues/55
-# まずはちゃんとbuildしよう
+#### 調べてみると、index.htmlがちゃんとwebappでbuildしたものでないためこの画面になってる模様（つまりデフォルト状態のhtmlをデプロイしちゃってる状態）
+#### これが参考になった：https://github.com/coreui/coreui-react/issues/55
+#### まずはちゃんとbuildしよう
 
 $ webdev buildが失敗
 ```
@@ -269,7 +269,7 @@ Choose a different directory or delete the contents of that directory.
 # ちゃんとbuildに成功した場合は、/web以下にあるindex.htmlと/build以下にあるindex.htmlの中身が同一になってる
 # firebase initするときはこのindex.htmlを上書きしちゃわないように気をつけること
 ```
-# build以下のindex.htmlを上書きするか聞かれるけど、事前にbuildしてたものを上書きしたくないのでNo選択
+#### build以下のindex.htmlを上書きするか聞かれるけど、事前にbuildしてたものを上書きしたくないのでNo選択
 ? File build/index.html already exists. Overwrite? No
 ```
 ```
