@@ -4,6 +4,7 @@ import 'package:asakawa_presentation/presentation_slides/default_slide.dart';
 import 'package:asakawa_presentation/presentation_slides/image_slide.dart';
 import 'package:asakawa_presentation/presentation_slides/table_of_contents.dart';
 import 'package:asakawa_presentation/presentation_slides/single_image_single_text.dart';
+import 'package:asakawa_presentation/presentation_slides/finish_slide.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       home: PageView(
         children: <Widget>[
+          FinishSlide(
+              title: "おしまい"),
           SingleImageSingleText(
               title: "本日ご紹介するのは「この世の果てで恋を歌う少女YU-NO」",
               content: "９０年代の超名作！全てのノベルゲーム開発者が立ち返るべきバイブル",
